@@ -28,6 +28,18 @@ public class Gif {
 	private List<Category> categories;
 
 
+	public String getUrl() {
+		return "/gifs/" + name + ".gif";
+	}
+
+	public String getDetailsUrl() {
+		return "/" + name;
+	}
+
+	public String getToggleFavoriteUrl() {
+		return getDetailsUrl() + "/favorite";
+	}
+
 	public Long getId() {
 		return id;
 	}

@@ -39,13 +39,7 @@
 <!--body-->
     <div class="gifs container">
         <div class="row">
-            <div th:each="gif : ${gifs}" class="col col-4">
-                <a th:href="${gif.getDetailsUrl()}">
-                    <img th:src="${gif.getUrl()}" th:alt="'gif named ' + ${gif.name}">
-                    <a th:href="${gif.getToggleFavoriteUrl()}"
-                       th:class="${gif.isFavorite() ? 'un' : ''} + 'favorite'"></a>
-                </a>
-            </div>
+
         </div>
     </div>
 
