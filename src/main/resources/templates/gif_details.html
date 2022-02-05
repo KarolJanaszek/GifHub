@@ -36,22 +36,43 @@
             </div>
         </nav>
     </div>
-<!--body-->
-    <div class="gifs container">
-        <div class="row">
+<!--gif-->
+    <div class="gif-detail container">
+        <div class="frame row">
+            <div class="col s12 l2">
+                <input type="text" th:field="${editedGif.name}" class="text-center" disabled>
+            </div>
+        </div>
+        <div class="frame row">
             <div class="col s12">
-                <img th:src="${editedGif.getUrl()}">
-                <a th:href="${editedGif.getToggleFavoriteUrl() + '?r=details'}"
-                   th:class="${editedGif.isFavorite() ? 'un' : ''} + 'favorite'"></a>
+                <img th:src="${editedGif.getUrl()}" />
+                <a th:href="${editedGif.getToggleFavoriteUrl()} + '?r=details'" th:class="(${editedGif.favorite} ? 'un' : '') + 'mark favorite'"></a>
+            </div>
+        </div>
+    <!--tag-->
+        <div class="row">
+            <div class="col s6">
+
+            </div>
+    <!--categories-->
+            <div class="col s6">
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+    <!--delete and copy-->
+        <div class="row">
+            <div class="col s12 l6">
+
             </div>
         </div>
     </div>
 
-<!--js-->
     <script src="https://kit.fontawesome.com/8158f700d3.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
     <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
     <script th:src="@{/app.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

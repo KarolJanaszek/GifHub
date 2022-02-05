@@ -31,7 +31,7 @@ public class GifController {
 		return "home";
 	}
 
-	@GetMapping("/{name}")
+	@GetMapping("/g/{name}")
 	public String getGif(Model model, @PathVariable String name) {
 		model.addAttribute("editedGif", gifService.getByName(name)
 			.orElseThrow(() -> new NoSuchElementException("Nie znaleziono gifa o nazwie " + name))
@@ -39,14 +39,14 @@ public class GifController {
 		return "gif_details";
 	}
 
-	@GetMapping("/{name}/favorite")
+	@GetMapping("/g/{name}/favorite")
 	public String toggleFavorite(@PathVariable String name, @RequestParam(required = false, defaultValue = "") String r)
 		throws NoSuchElementException {
 		Gif gif = gifService.getByName(name)
 			.orElseThrow(() -> new NoSuchElementException("Nie znaleziono gifa o nazwie " + name));
 		gifService.toggleFavorite(gif);
 		if (r.equals("details")) {
-			return "redirect:/{name}";
+			return "redirect:/g/{name}";
 		} else {
 			return "redirect:/";
 		}

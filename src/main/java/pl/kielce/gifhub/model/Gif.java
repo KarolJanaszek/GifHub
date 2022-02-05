@@ -33,11 +33,11 @@ public class Gif {
 	}
 
 	public String getDetailsUrl() {
-		return "/" + name;
+		return "/g/" + name;
 	}
 
 	public String getToggleFavoriteUrl() {
-		return getDetailsUrl() + "/favorite";
+		return "/g/" + name + "/favorite";
 	}
 
 	public Long getId() {
