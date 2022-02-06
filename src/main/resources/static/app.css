@@ -234,6 +234,15 @@ nav ul li.active, nav ul li:hover {
     margin-top: 25px;
 }
 
+.category-box {
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 40px;
+    padding: 80px;
+
+}
+
 @media only screen and (max-width: 992px) {
     nav .brand-logo {
         left: 0;

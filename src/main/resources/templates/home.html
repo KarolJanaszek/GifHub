@@ -36,10 +36,23 @@
             </div>
         </nav>
     </div>
+<!--search box-->
+<div class="search-bar container">
+    <div class="row">
+        <div class="col col-12">
+            <form action="#" method="get">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Type tag or name of gif to find..." required="required" autocomplete="off">
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!--body-->
     <div class="gifs container">
         <div class="row">
-            <div th:each="gif : ${gifs}" class="col col-4">
+            <div th:each="gif : ${gifs}" class="col col-4" style="margin-top: 25px">
                 <a th:href="${gif.getDetailsUrl()}">
                     <img th:src="${gif.getUrl()}" th:alt="'gif named ' + ${gif.name}">
                     <a th:href="${gif.getToggleFavoriteUrl()}"

@@ -36,7 +36,8 @@ public class GifServiceImpl implements GifService {
 
 	@Override
 	public List<Gif> getByTagOrName(String tagOrName) {
-		return gifRepo.findGifsByTagOrName(tagOrName, tagOrName);
+		tagOrName = "%" + tagOrName + "%";
+		return gifRepo.findGifsByTagIsLikeOrNameIsLike(tagOrName, tagOrName);
 	}
 
 	@Override

@@ -52,7 +52,18 @@
     <!--tag-->
         <div class="row">
             <div class="col s6">
-
+                <form th:action="@{/gif/{name}(name=${editedGif.name})}" method="post" th:object="${editedGif}">
+                    <input type="hidden" th:field="*{id}">
+                    <input type="hidden" th:field="*{name}">
+                    <input type="hidden" th:field="*{favorite}">
+                    <input type="hidden" th:field="*{categories}">
+                    <div class="col s8 l3">
+                        <input type="text" class="text-center" th:field="*{tag}">
+                    </div>
+                    <div class="col s4 l1">
+                        <input type="submit" value="Change" class="btn btn-warning" style="margin: 15px">
+                    </div>
+                </form>
             </div>
     <!--categories-->
             <div class="col s6">
@@ -64,7 +75,9 @@
     <!--delete and copy-->
         <div class="row">
             <div class="col s12 l6">
-
+                <a th:href="@{/g/{name}/delete(name=${editedGif.name})}">
+                    <img th:src="@{/img/delete.png}" class="delete-btn">
+                </a>
             </div>
         </div>
     </div>

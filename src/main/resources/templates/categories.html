@@ -39,7 +39,11 @@
 <!--body-->
     <div class="gifs container">
         <div class="row">
-
+            <div th:each="category : ${categories}" class="col col-4" style="margin-top: 25px">
+                <div class="category-box valign-wrapper center-align">
+                    <p th:text="${category.name}"></p>
+                </div>
+            </div>
         </div>
     </div>
 
